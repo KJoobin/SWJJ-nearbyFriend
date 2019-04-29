@@ -3,6 +3,7 @@ var app = express()
 var router = express.Router()
 var mysql = require('mysql')
 var path = require('path')
+var login = require('./login/login')
 
 const connection = mysql.createConnection({
   host      : 'localhost',
@@ -23,6 +24,9 @@ CREATE TABLE identity (
 connection.connect();
 
 router.get('/',function(req,res) {
-  res.render(path.join(__dirname,"../login/index.ejs"))
+  res.render(path.join(__dirname,"../login/index.ejs"),{email_adress:"Hello World"})
 })
+
+
+router.use('/login',login)
 module.exports = router
