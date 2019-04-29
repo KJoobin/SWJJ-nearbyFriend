@@ -7,7 +7,6 @@ var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
 
 
-
 const connection = mysql.createConnection({
   host      : 'localhost',
   user      : 'root',
@@ -19,9 +18,16 @@ const connection = mysql.createConnection({
 connection.connect();
 
 
+
+
 router.get('/',function(req,res) {
-  res.redirect('/')
+  var mag = "Hello World"
+  var errMsg = req.flash('error')
+  if(errMsg) msg = errMsg;
+  console.log("doit");
+  res.render(path.join(__dirname,"../../login/login.ejs"),{email_adress : msg})
 })
+
 
 
 passport.serializeUser(function (user, done) {
@@ -34,10 +40,8 @@ passport.deserializeUser(function(id, done) {
   done(null,id);
 })
 
-
-
-
-passport.use('local-login', new LocalStrategy({
+//수정 해야함 ***
+passport.use('local-join', new LocalStrategy({
   usernameField : 'email',
   passwordFiled : 'password',
   passReqToCallback : true
@@ -56,17 +60,38 @@ passport.use('local-login', new LocalStrategy({
   })
 }
 ))
+//***
 
-router.post('/', function(req, res, next) {
-  passport.authenticate('local-login', function(err, user, info) {
-    if (err) { return next(err); }
-    if (!user) { return res.redirect('/'); }
-    req.logIn(user, function(err) {
-      if (err) { return next(err); }
-      // return res.redirect('/users/' + user.username);
-      return res.redirect('/');
-    });
-  })(req, res, next);
-});
+router.post('/',
+  passport.authenticate('local-join', { successRedirect : '/',
+                                   failureRedirect : '/join',
+                                   failureFlash : true})
+);
 
-module.exports = router
+
+
+// router.post('/',function(req,res) {
+//   email = req.body.email;
+//   password = req.body.password;
+//   var result = {};
+//   connection.query(`SELECT * FROM identity WHERE email = ? `,email,function(err,rows) {
+//     if(err) throw err;
+//     if(rows[0]) {
+//       if(rows[0].password === password) {
+//         result.send = email;
+//         result.info = true;
+//         res.send(result);
+//       } else {
+//         result.send = email;
+//         result.info = false;
+//         res.send(result)
+//       }
+//     }
+//     else {
+//       result.send = false;
+//       res.send(result);
+//     }
+//   })
+// })
+
+module.exports = router;
