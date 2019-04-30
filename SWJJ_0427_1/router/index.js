@@ -16,6 +16,11 @@ CREATE TABLE identity (
     -> password  VARCHAR(40) NOT NULL,
     -> PRIMARY KEY(id)
     -> );
+
+    sql 에 넣을 데이터목록, 목록들의 데이터형? 닉네임, ... 넣을,
+    메인페이지 구성,
+    구글api  신용카드 등록,
+
 */
 
 
