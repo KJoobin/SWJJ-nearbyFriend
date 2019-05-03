@@ -20,7 +20,7 @@ connection.connect();
 
 
 router.get('/',function(req,res) {
-  res.redirect('/')
+  res.render(path.join(__dirname,"../../login/login.ejs"),{email_adress:"hello"+req.user})
 })
 
 
@@ -60,11 +60,12 @@ passport.use('local-login', new LocalStrategy({
 router.post('/', function(req, res, next) {
   passport.authenticate('local-login', function(err, user, info) {
     if (err) { return next(err); }
-    if (!user) { return res.redirect('/'); }
+    if (!user) { return res.status(401).json(info); }
     req.logIn(user, function(err) {
       if (err) { return next(err); }
       // return res.redirect('/users/' + user.username);
-      return res.redirect('/');
+
+      return res.json("{}");
     });
   })(req, res, next);
 });
