@@ -1,0 +1,203 @@
+#cf3 {
+  position:relative;
+  margin:0 auto;
+}
+
+#cf3 img {
+  position:absolute;
+  left:0;
+  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  height:100%;
+  width:100%;
+}
+
+#cf3 div.placard {
+  font-size:50px;
+  color:red;
+}
+#cf3 button.logBut{
+  width:10em;
+  height: 8em;
+}
+
+ @keyframes cf3FadeInOut {
+  from {
+    opacity:1;
+  }
+  45% {
+    opacity:1;
+  }
+  55% {
+    opacity:0;
+  }
+  to {
+    opacity:0;
+  }
+}
+
+#cf3 img.top {
+animation-name: cf3FadeInOut;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-duration: 5s;
+animation-direction: alternate;
+}
+/*(A)  */
+
+/* (B) */
+.BdB {
+  border-bottom-width: 1px;
+}
+.Bdrs\(8px\) {
+  border-radius: 8px;
+}
+.Bgc\(\#000\.68\) {
+  background-color: rgba(0,0,0,0.68);
+}
+.Bgc\(\#fff\) {
+  background-color: #fff;
+}
+
+/* (C) */
+.centerAlign {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+/* (D) */
+.D\(f\) {
+  display: flex;
+}
+/* (E) */
+.Expand {
+  height:100%;
+  width:100%;
+}
+
+/* (F) */
+
+.F\(r\) {
+   float:right;
+ }
+
+.Fill\(\$c-divider\) {
+   fill:#e8e8e8;
+ }
+
+.Fld\(c\){
+   flex-direction: column;
+ }
+/* (G) */
+
+/* (H) */
+
+.H\(100\%\) {
+  height: 100%;
+}
+.H\(80\%\) {
+  height: 80%;
+}
+.H\(a\) {
+  height: auto;
+}
+
+/* (I) */
+
+/* (J) */
+
+.Jc\(c\) {
+  justify-content: center;
+}
+
+
+/* (K) */
+
+/* (L) */
+
+/* (M) */
+
+.M\(10px\) {
+  margin:10px;
+}
+.modalManage{
+  position: absolute;
+  top:0px;
+  bottom: 0px;
+  left: 0px;
+  right:0px;
+}
+
+
+/* (N) */
+
+/* (O) */
+
+.Ov\(h\) {
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.Ov\(v\) {
+  overflow: visible;
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+
+/* (P) */
+
+.pos\(r\) {
+  position:relative;
+}
+.pos\(a\) {
+  position: absolute;
+}
+.Py\(36px\) {
+  padding-bottom: 36px;
+  padding-top: 36px;
+}
+.Px\(44px\) {
+  padding-left: 44px;
+  padding-right: 44px;
+}
+
+/* (Q) */
+
+/* (R) */
+
+/* (S) */
+.Sq\(30px\) {
+  width:30px;
+  height:30px;
+}
+/* (T) */
+.Ta\(c\) {
+  text-align: center;
+}
+
+/* (U) */
+
+/* (V) */
+
+/* (W) */
+.W\(100\%\) {
+  width:100%;
+}
+.W\(440px\) {
+  width: 440px;
+}
+
+/* (X) */
+
+/* (Y) */
+
+/* (Z) */
+.Z\(0\) {
+  z-index:0;
+}
+.Z\(2\) {
+  z-index:2;
+}

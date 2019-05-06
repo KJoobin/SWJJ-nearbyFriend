@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" class="Expand">
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="/login/main.css">
   </head>
-  <body>
-    <h1><%= email_adress %></h1>
-    <h3>아무말아무말</h3>
-
-    <a href="/logout"> logout</a>
+  <body class="Expand">
+    <div id="cf3" class="Expand">
+      <div class="Expand BdB pos(a) Z(0)">
+        <div class="pos(a) Z(2) W(100%)">
+          <div class="placard"> <%= email_adress %></div>
+        </div>
+        <img class="pos(a) bottom Expand" src="/login/img/party_login_img_0001.jpeg" />
+        <img class="pos(a) top Expand" src="/login/img/cafe_meeting_img_0001.jpeg" />
+        <div class="H(100%) centerAlign">
+          <button type="button" id="js-login_button" name="button" class="logBut Z(0)">로그인</button>
+        </div>
+      </div>
+    </div>
+    <div id="modal-manage"></div>
   </body>
   <script src="main.js"></script>
   <script src="login.js"></script>

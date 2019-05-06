@@ -25,11 +25,12 @@ CREATE TABLE identity (
 
 
   router.get('/',function(req,res) {
-    console.log(req.user);
+    console.log("req.user : ",req.user);
     if(!req.user) {
-      res.render(path.join(__dirname,"../login/login.ejs"),{email_adress : "hello"})
+      res.render(path.join(__dirname,"../login/main.ejs"),{email_adress : "Well come to the nearby Friends"})
     } else {
-    res.render(path.join(__dirname,"../login/main.ejs"),{email_adress : req.user})
+      console.log("end?")
+      res.render(path.join(__dirname,"../login/login.ejs"),{email_adress : req.user})
   }
   })
 
