@@ -21,12 +21,15 @@ app.listen(3000,function() {
 })
 
 // **********************************
+
 app.use(express.static(__dirname + "/static"))
 app.use(session({
   secret : 'keyboard cat',
   resave : false,
   saveUninitialized : true
 }))
+
+
 app.use(passport.initialize());//passport 초기화
 app.use(passport.session()); // 로그인상태 유지
 app.use(flash()); // 에러를 잡아서 메세지를 쉽게 전달해

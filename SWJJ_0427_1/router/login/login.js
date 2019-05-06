@@ -9,10 +9,11 @@ var LocalStrategy = require('passport-local').Strategy
 
 
 const connection = mysql.createConnection({
-  host      : 'localhost',
-  user      : 'root',
-  password  : 'password',
-  database  : 'nearbyFriends'
+  host : 'localhost',
+  port : 3306, //?
+  user : 'root',
+  password : 'baby',
+  database : 'nearbyfriends'
 });
 
 
@@ -20,7 +21,7 @@ connection.connect();
 
 
 router.get('/',function(req,res) {
-  res.render(path.join(__dirname,"../../login/login.ejs"),{email_adress:"hello"+req.user})
+  res.redirect('/');
 })
 
 

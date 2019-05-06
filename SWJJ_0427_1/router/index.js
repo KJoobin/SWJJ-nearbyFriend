@@ -3,7 +3,7 @@ var app = express()
 var router = express.Router()
 
 var path = require('path')
-var join = require('./signUp/signUp')
+var join = require('./join/join')
 var login = require('./login/login')
 var logout = require('./logout/logout.js')
 
