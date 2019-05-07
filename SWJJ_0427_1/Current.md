@@ -63,7 +63,6 @@
     -> limit TINYINT,
     -> limitGender TINYINT,
     -> time (DATETIME or TIEMSTAMP ( Default 값 존재)),
-
     )
 
 - 참가자 목록

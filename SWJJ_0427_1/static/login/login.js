@@ -21,11 +21,7 @@ function xhrSend(url,data,method) {
     xhr.addEventListener('load',function() {
       var result = JSON.parse(xhr.responseText);
       if(!result.message) {
-        var form = document.createElement("form")
-        document.body.appendChild(form);
-        form.action = "/"
-        form.method = "get"
-        form.submit();
+        window.location.href = "/"
       }
       document.querySelector('#errMsg').innerText = result.message
   })

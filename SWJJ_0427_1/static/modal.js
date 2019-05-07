@@ -1,11 +1,18 @@
-document.querySelector("#js-login_button").addEventListener("click",makeModal)
+document.querySelector("#js-login_button").addEventListener("click",function() {
+  modalText = `<div class="Expand">hello<div><input type="text" name="email"></input></div></div>
+                   <div class="Expand">password<div><input type="password" name="password"></input></div></div>
+                   <div><button>로그인</button></div>
+                   <div id="errMsg"></div>`
+  makeModal(modalText)
+})
 
-function makeModal() {
+function makeModal(inModalText) {
   if(!document.querySelector("#modal-manage").childNodes.length) {
     modalManage();
     modalDiv();
     closeModal();
-    textInModal();
+    textInModal(inModalText);
+
     var clickModal = false;
     document.querySelector("#modal-manage div").addEventListener('click',function() {
       if(document.querySelector("#modal-manage").childNodes.length && !clickModal) {
@@ -39,35 +46,38 @@ function closeModal() {
   document.querySelector("#modal-manage div div").appendChild(div);
 }
 
-function textInModal() {
+function textInModal(text) {
   var div = document.createElement("div");
   div.classList.add("modalText","Ta(c)","Pos(r)","H(100%)","D(f)","Fld(c)")
-  div.innerHTML = `<div class="Expand">hello<div><input type="text" name="email"></input></div></div>
-                   <div class="Expand">password<div><input type="password" name="password"></input></div></div>
-                   <div><button>로그인</button></div>
-                   <div id="errMsg"></div>`
+  div.innerHTML = text;
   document.querySelector("#modal-manage div div").appendChild(div);
   document.querySelector(".modalText div button").addEventListener("click",login);
-
 }
+
 
 function removeModal() {
   document.querySelector("#modal-manage .modalManage").remove()
-
 }
+
 
 function loadModal () {
   window.addEventListener('load',function() {
-    setTimeout(makeModal,1000);
+    setTimeout(function() {
+      modalText = `<div class="Expand">hello<div><input type="text" name="email"></input></div></div>
+                       <div class="Expand">password<div><input type="password" name="password"></input></div></div>
+                       <div><button>로그인</button></div>
+                       <div id="errMsg"></div>`;
+      makeModal(modalText);
+    },1000);
   })
 }
-
-
 
 
 
 function init() {
   loadModal();
 }
+
+
 
 init();
