@@ -20,7 +20,7 @@ connection.connect();
 
 
 router.get('/',function(req,res) {
-  res.render(path.join(__dirname,"../../login/login.ejs"),{email_adress:"hello"+req.user})
+  res.redirect('/');
 })
 
 

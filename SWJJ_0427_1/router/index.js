@@ -3,9 +3,9 @@ var app = express()
 var router = express.Router()
 
 var path = require('path')
-var join = require('./signUp/signUp')
 var login = require('./login/login')
 var logout = require('./logout/logout.js')
+var myPage = require('./myPage/main.js')
 
 
 
@@ -27,16 +27,15 @@ CREATE TABLE identity (
   router.get('/',function(req,res) {
     console.log("req.user : ",req.user);
     if(!req.user) {
-      res.render(path.join(__dirname,"../login/main.ejs"),{email_adress : "Well come to the nearby Friends"})
+      res.render(path.join(__dirname,"../login/login.ejs"),{email_adress : "Well come to the nearby Friends"})
     } else {
-      console.log("end?")
-      res.render(path.join(__dirname,"../login/login.ejs"),{email_adress : req.user})
+      res.render(path.join(__dirname,"../login/main.ejs"))
   }
   })
 
 
 
-router.use('/join',join)
+router.use('/mypage',myPage)
 router.use('/login',login)
 router.use('/logout',logout)
 module.exports = router
