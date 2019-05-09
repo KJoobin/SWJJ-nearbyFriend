@@ -124,6 +124,9 @@ input {
  .Fd\(c\) {
    flex-direction: row;
  }
+ .Fs\(24px\) {
+   font-size: 24px;
+ }
 /* (G) */
 
 .Gtc\(6\,1\) {
@@ -140,8 +143,8 @@ input {
 .Gtc\(1\,1\,4\) {
   grid-template-columns: 1fr 1fr 1fr;
 }
-.Gtc\(100px\) {
-  grid-template-columns: 120px 60px;
+.Gtc\(70\,60px\) {
+  grid-template-columns: 70px 60px;
 }
 .Gg\(3\) {
   grid-gap: 3px;
@@ -280,7 +283,7 @@ input {
 }
 
 .W\(100\) {
-  width:100px;
+  width:50px;
 }
 .W\(40\%\) {
   width:50%;

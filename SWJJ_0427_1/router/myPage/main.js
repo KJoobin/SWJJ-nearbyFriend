@@ -40,7 +40,6 @@ router.get('/',function(req,res) {
     var picture = rows[0].picture;
     res.render(path.join(__dirname+"/../../login/mypage.ejs"),{userName:user,nickName:nickName,sex:sex,age:age,area:area,about:about,grade:grade,picture:picture})
   })
-
 })
 
 module.exports= router;
