@@ -45,6 +45,22 @@ animation-iteration-count: infinite;
 animation-duration: 5s;
 animation-direction: alternate;
 }
+input {
+}
+
+.write_button {
+  position: fixed;
+  bottom: 2px;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  z-index: 2;
+  right: 2px;
+}
+
+.menu {
+  grid-template-columns: 1fr 5fr 1fr
+}
 /*(A)  */
 .As\(s\) {
   align-self:flex-start;
@@ -55,6 +71,9 @@ animation-direction: alternate;
 /* (B) */
 .BdB {
   border-bottom-width: 1px;
+}
+.BdT\(0\) {
+  border-top:0px;
 }
 .Bdrs\(8px\) {
   border-radius: 8px;
@@ -114,11 +133,30 @@ animation-direction: alternate;
 .Gar\(100\) {
   grid-auto-rows: 33%;
 }
+
 .Gtc\(4\,1\) {
   grid-template-columns: repeat(4,1fr);
 }
+.Gtc\(1\,1\,4\) {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.Gtc\(100px\) {
+  grid-template-columns: 120px 60px;
+}
 .Gg\(3\) {
   grid-gap: 3px;
+}
+.GTA\(U\,D\) {
+  grid-template-areas: "text up" "text down"
+}
+.GA\(text\) {
+  grid-area : text;
+}
+.GA\(up\) {
+  grid-area : up;
+}
+.GA\(down\) {
+  grid-area:down;
 }
 /* (H) */
 
@@ -130,6 +168,9 @@ animation-direction: alternate;
 }
 .H\(a\) {
   height: auto;
+}
+.H\(100\) {
+  height: 100px;
 }
 
 /* (I) */
@@ -152,6 +193,12 @@ animation-direction: alternate;
 
 .M\(10px\) {
   margin:10px;
+}
+.MgT\(5px\) {
+  margin-top:5px;
+}
+.MgT\(10px\) {
+  margin-top:10px;
 }
 
 .modalManage{
@@ -195,11 +242,21 @@ animation-direction: alternate;
   padding-left: 44px;
   padding-right: 44px;
 }
-
+.Pc\(c\) {
+  place-items :center;
+}
+.Pc\(s\) {
+  place-items:start;
+}
+.Pc\(es\) {
+  place-items:end start;
+}
 /* (Q) */
 
 /* (R) */
-
+.R\(n\) {
+  resize: none;
+}
 /* (S) */
 .Sq\(30px\) {
   width:30px;

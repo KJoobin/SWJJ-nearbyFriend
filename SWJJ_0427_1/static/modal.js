@@ -51,7 +51,7 @@ function textInModal(text) {
   div.classList.add("modalText","Ta(c)","Pos(r)","H(100%)","D(f)","Fld(c)")
   div.innerHTML = text;
   document.querySelector("#modal-manage div div").appendChild(div);
-  document.querySelector(".modalText div button").addEventListener("click",login);
+  document.querySelector(".modalText div button").addEventListener("click",logIn);
 }
 
 

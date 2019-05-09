@@ -1,4 +1,4 @@
-function login() {
+function logIn() {
 
     var data = {};
     data.email = document.getElementsByName("email")[0].value;

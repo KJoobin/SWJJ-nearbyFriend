@@ -4,8 +4,9 @@ var router = express.Router()
 
 var path = require('path')
 var login = require('./login/login')
-var logout = require('./logout/logout.js')
-var myPage = require('./myPage/main.js')
+var logout = require('./logout/logout')
+var myPage = require('./myPage/main')
+var write = require('./write/write')
 
 
 
@@ -38,4 +39,5 @@ CREATE TABLE identity (
 router.use('/mypage',myPage)
 router.use('/login',login)
 router.use('/logout',logout)
+router.use('/write',write)
 module.exports = router
