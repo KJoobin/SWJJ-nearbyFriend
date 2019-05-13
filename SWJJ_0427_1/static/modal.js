@@ -1,3 +1,5 @@
+
+
 var loginText =`<div class="Expand">hello<div><input type="text" name="email"></input></div></div>
 <div class="Expand">password<div><input type="password" name="password"></input></div></div>
 <div><button id="login-btn">로그인</button></div>
@@ -8,6 +10,7 @@ var joinText =
 <div><h4>회원가입</h4></div>
 <form action="/join" method="POST">
 email: <input name="email" type="email"><br>
+<p id="errMsg"></p>
 password: <input name="password" type="text"><br>
 nickname: <input name="nickname" type="text"><br>
 gender: <input type="radio" name="sex" value="male" checked> Male<br>
@@ -16,7 +19,7 @@ gender: <input type="radio" name="sex" value="male" checked> Male<br>
 age: <input name="age" type="number"><br>
 area: <input name="area" type="text"><br>
 about: <textarea name="about" type="text"></textarea><br><br>
-<button>가입하기</button>
+<button id ="join-btn-2">가입하기</button>
 </form>
 `
 ;
@@ -74,6 +77,7 @@ function textInModal(text) {
   document.querySelector("#login-btn").addEventListener("click",login);
   document.querySelector("#join-btn").addEventListener("click",function(){
     div.innerHTML = joinText
+    document.querySelector("#join-btn-2").addEventListener("click",join); //join-btn-2 버튼 클릭시 join.js 실행
   });
 
 }

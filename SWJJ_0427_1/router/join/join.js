@@ -6,7 +6,7 @@ var path = require('path')
 var passport = require('passport')
 var LocalStrategy = require('passport-local').Strategy
 
-
+app.set('view engine', 'ejs')
 
 const connection = mysql.createConnection({
   host : 'localhost',
@@ -43,46 +43,45 @@ passport.use('local-join', new LocalStrategy({
   passwordFiled : 'password',
   passReqToCallback : true
 }, function(req, email, password, done) { //done 을 사용하면 비동기 가 멈춘다
-  // console.log('local-join callback called'); // semicolon 필요?
-  var query = connection.query('select * from user where email=?', [email], function(err,rows){
+  var info = req.body;
+  console.log(info); // semicolon 필요?
+  if(info.sex === 'male'){
+      info.sex = 1
+  }else if(info.sex === 'female'){
+      info.sex = 2
+  }else{
+      info.sex = 3
+  }
+
+  var query = connection.query('select * from identity where email=?', [email], function(err,rows){
         if(err) return done(err);
         if(rows.length){
-            console.log('existed user')
-            return done(null, false, {message : 'your email is already used'})
+            console.log('existed email')
+            return done(null, false, {message : '이미 가입된 이메일입니다.'}) // 이메일이 이미 있으면 message를 info로 보내 모달창 내에서 ajax로 처리한다. 근데 페이지가 /join 으로 넘어가 message가 브라우저에 표시되고 있음.
         }else{
-            var sql = {email: email, pw: password}
-            var query = connection.query('insert into user set ?', sql, function(err,rows){
-                if(err) throw err
-                return done(null, {'email': email, 'id': rows.insertId})
-            })
+          connection.query('insert into identity set ?', info, function(err,rows){ // 이메일에서 통과가 되면 테이블에 사용자를 insert 한 후.... name 정보를 가지고 join-complete.ejs로 넘어가게 했어. 잘 넘어가긴 하는데, 코드 리뷰좀 해줘. 아! 세션이 유지가 안되는 것 같아!! 밑에서 res.json 안하고, res.render를 써서 그런가봐.
+              if(err) throw err
+              //console.log(responseData)
+              return done(null, {'email': email, 'nickname' : info.nickname})
+          })
+            
         }
     })
 }
 ))
 
 router.post('/', function(req, res, next) {
-    var info = req.body;
-    if(info.sex === 'male'){
-        info.sex = 1
-    }else if(info.sex === 'female'){
-        info.sex = 2
-    }else{
-        info.sex = 3
-    }
-    //console.log(info)
-    var responseData = {};
-    var query = connection.query('insert into identity set ?', info, function(err,rows){
-        if(err) throw err
-        responseData = {'email': info.email, 'password': info.password}
-        //console.log(responseData)
-        return responseData;
-    })
+    passport.authenticate('local-join', function(err, user, info) {
+        if (err) { return next(err); }
+        if (!user) { return res.status(401).json(info); }
+        req.logIn(user, function(err) {
+          if (err) { return next(err); }
+          return res.render('join-complete.ejs', {'nickname' : user.nickname});
+    
+          //return res.json(user);
+        });
+      })(req, res, next);
 });
 
-router.post('/', passport.authenticate('local-join', {
-    successRedirect: '/',
-    failureRedirect: '/',
-    failureFlash: true
-}))
 
 module.exports = router
