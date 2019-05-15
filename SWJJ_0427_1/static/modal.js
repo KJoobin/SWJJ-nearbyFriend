@@ -8,7 +8,7 @@ var loginText =`<div class="Expand">hello<div><input type="text" name="email"></
 var joinText =
 `
 <div><h4>회원가입</h4></div>
-<form action="/join" method="POST">
+<div>
 email: <input name="email" type="email"><br>
 <p id="errMsg"></p>
 password: <input name="password" type="text"><br>
@@ -20,7 +20,7 @@ age: <input name="age" type="number"><br>
 area: <input name="area" type="text"><br>
 about: <textarea name="about" type="text"></textarea><br><br>
 <button id ="join-btn-2">가입하기</button>
-</form>
+</div>
 `
 ;
 

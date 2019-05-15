@@ -20,19 +20,21 @@ const connection = mysql.createConnection({
 connection.connect();
 
 
-// router.get('/',function(req,res) {
-//   res.redirect('/');
-// })
+router.get('/',function(req,res) {
+  console.log(req.query);
+  //var nickname = req.path
+  res.render('join-complete.ejs', {'nickname': req.query.nickname});
+})
 
 
 passport.serializeUser(function (user, done) {
-  console.log('passport session save ', user.id)
+  console.log('passport session save ', user.email)
   done(null, user.email);
 });
 
-passport.deserializeUser(function(id, done) {
-  console.log('passport dess', id)
-  done(null,id);
+passport.deserializeUser(function(email, done) {
+  console.log('passport dess', email)
+  done(null,email);
 })
 
 
@@ -76,7 +78,7 @@ router.post('/', function(req, res, next) {
         if (!user) { return res.status(401).json(info); }
         req.logIn(user, function(err) {
           if (err) { return next(err); }
-          return res.render('join-complete.ejs', {'nickname' : user.nickname});
+          return res.json({'nickname' : user.nickname});
     
           //return res.json(user);
         });
