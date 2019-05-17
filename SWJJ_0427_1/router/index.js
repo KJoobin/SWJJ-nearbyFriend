@@ -3,6 +3,7 @@ var app = express()
 var router = express.Router()
 
 var path = require('path')
+var join = require('./join/join')
 var login = require('./login/login')
 var logout = require('./logout/logout')
 var myPage = require('./myPage/main')
@@ -35,7 +36,7 @@ CREATE TABLE identity (
   })
 
 
-
+router.use('/join',join)
 router.use('/mypage',myPage)
 router.use('/login',login)
 router.use('/logout',logout)

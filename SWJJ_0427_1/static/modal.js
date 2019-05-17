@@ -1,18 +1,41 @@
-document.querySelector("#js-login_button").addEventListener("click",function() {
-  modalText = `<div class="Expand">hello<div><input type="text" name="email"></input></div></div>
-                   <div class="Expand">password<div><input type="password" name="password"></input></div></div>
-                   <div><button>로그인</button></div>
-                   <div id="errMsg"></div>`
-  makeModal(modalText)
-})
 
-function makeModal(inModalText) {
+
+var loginText =`<div class="Expand">hello<div><input type="text" name="email"></input></div></div>
+<div class="Expand">password<div><input type="password" name="password"></input></div></div>
+<div><button id="login-btn">로그인</button></div>
+<div><button id="join-btn">회원가입</button></div>
+<div id="errMsg"></div>`;
+var joinText =
+`
+<div><h4>회원가입</h4></div>
+<div>
+email: <input name="email" type="email"><br>
+<p id="errMsg"></p>
+password: <input name="password" type="text"><br>
+nickname: <input name="nickname" type="text"><br>
+gender: <input type="radio" name="sex" value="male" checked> Male<br>
+<input type="radio" name="sex" value="female"> Female<br>
+<input type="radio" name="sex" value="other"> Other<br>
+age: <input name="age" type="number"><br>
+area: <input name="area" type="text"><br>
+about: <textarea name="about" type="text"></textarea><br><br>
+<button id ="join-btn-2">가입하기</button>
+</div>
+`
+;
+
+document.querySelector("#js-login_button").addEventListener("click",function(){
+  makeModal(loginText)
+});
+
+
+function makeModal(text) {
+  console.log(document.querySelector("#modal-manage").childNodes.length)
   if(!document.querySelector("#modal-manage").childNodes.length) {
     modalManage();
     modalDiv();
     closeModal();
-    textInModal(inModalText);
-
+    textInModal(text);
     var clickModal = false;
     document.querySelector("#modal-manage div").addEventListener('click',function() {
       if(document.querySelector("#modal-manage").childNodes.length && !clickModal) {
@@ -51,33 +74,33 @@ function textInModal(text) {
   div.classList.add("modalText","Ta(c)","Pos(r)","H(100%)","D(f)","Fld(c)")
   div.innerHTML = text;
   document.querySelector("#modal-manage div div").appendChild(div);
-  document.querySelector(".modalText div button").addEventListener("click",logIn);
-}
+  document.querySelector("#login-btn").addEventListener("click",login);
+  document.querySelector("#join-btn").addEventListener("click",function(){
+    div.innerHTML = joinText
+    document.querySelector("#join-btn-2").addEventListener("click",join); //join-btn-2 버튼 클릭시 join.js 실행
+  });
 
+}
 
 function removeModal() {
   document.querySelector("#modal-manage .modalManage").remove()
-}
 
+}
 
 function loadModal () {
   window.addEventListener('load',function() {
     setTimeout(function() {
-      modalText = `<div class="Expand">hello<div><input type="text" name="email"></input></div></div>
-                       <div class="Expand">password<div><input type="password" name="password"></input></div></div>
-                       <div><button>로그인</button></div>
-                       <div id="errMsg"></div>`;
-      makeModal(modalText);
+      makeModal(loginText)
     },1000);
   })
 }
 
 
 
+
+
 function init() {
   loadModal();
 }
-
-
 
 init();

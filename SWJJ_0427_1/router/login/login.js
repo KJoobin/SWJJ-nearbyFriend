@@ -9,10 +9,11 @@ var LocalStrategy = require('passport-local').Strategy
 
 
 const connection = mysql.createConnection({
-  host      : 'localhost',
-  user      : 'root',
-  password  : 'password',
-  database  : 'nearbyFriends'
+  host : 'localhost',
+  port : 3306, //?
+  user : 'root',
+  password : 'password',
+  database : 'nearbyfriends'
 });
 
 
