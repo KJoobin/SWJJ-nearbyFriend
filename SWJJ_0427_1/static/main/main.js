@@ -37,6 +37,5 @@ document.querySelector('.logOut').onclick = function() {
   window.location.href="/logout"
 }
 document.querySelector(".logo").onclick = function() {
-  console.log("ab")
   window.location.href="/"
 }

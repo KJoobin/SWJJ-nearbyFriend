@@ -48,6 +48,10 @@ animation-direction: alternate;
 input {
 }
 
+.profile > img {
+  border-radius: 50%;
+}
+
 .write_button {
   position: fixed;
   bottom: 2px;
@@ -90,6 +94,16 @@ input {
   align-items: center;
   justify-content: center;
   display: flex;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.textCenter {
+  text-align: center;
+}
+.mypage_margin {
+  margin-top: 15px;
 }
 /* (D) */
 .D\(f\) {
@@ -149,6 +163,9 @@ input {
 .Gg\(3\) {
   grid-gap: 3px;
 }
+.GtR\(mypage\) {
+  grid-template-rows: 1fr 11fr;
+}
 .GTA\(U\,D\) {
   grid-template-areas: "text up" "text down"
 }
@@ -177,7 +194,13 @@ input {
 }
 
 /* (I) */
-
+.info_menu {
+  margin-left:auto;
+  align-items:flex-end;
+}
+.infoCate {
+  align-items:center;
+}
 /* (J) */
 
 .Jc\(c\) {
@@ -196,6 +219,9 @@ input {
 
 .M\(10px\) {
   margin:10px;
+}
+.marLef {
+  margin-left: 5px;
 }
 .MgT\(5px\) {
   margin-top:5px;
@@ -254,6 +280,14 @@ input {
 .Pc\(es\) {
   place-items:end start;
 }
+.profile {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 100px;
+  width : 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* (Q) */
 
 /* (R) */
@@ -264,6 +298,26 @@ input {
 .Sq\(30px\) {
   width:30px;
   height:30px;
+}
+/*  평가하기 */
+.star .half:before {
+  content:"\2605";
+  position:absolute;
+  width:23px;
+  overflow: hidden;
+}
+.star .full:before {
+  content:"\2605";
+  position:absolute;
+}
+.star > span:hover:before {
+  content:"\2605";
+  position:absolute;
+  width:23px;
+  overflow: hidden;
+}
+.star {
+  font-size: 50px;
 }
 /* (T) */
 .Ta\(c\) {

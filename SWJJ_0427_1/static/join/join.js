@@ -1,4 +1,3 @@
-console.log("is connect")
 function join() {
 
     var data = {};
