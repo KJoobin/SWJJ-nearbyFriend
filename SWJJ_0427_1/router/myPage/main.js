@@ -4,6 +4,7 @@ var router = express.Router()
 var mysql = require('mysql')
 var path = require('path')
 var passport = require('passport')
+var upload = require('./upload')
 var LocalStrategy = require('passport-local').Strategy
 
 
@@ -41,5 +42,7 @@ router.get('/',function(req,res) {
     res.render(path.join(__dirname+"/../../login/mypage.ejs"),{userName:user,nickName:nickName,sex:sex,age:age,area:area,about:about,grade:grade,picture:picture})
   })
 })
+
+router.use('/upload',upload)
 
 module.exports= router;
