@@ -5,7 +5,9 @@ var router = express.Router()
 var path = require('path')
 var join = require('./join/join')
 var login = require('./login/login')
-var logout = require('./logout/logout.js')
+var logout = require('./logout/logout')
+var editor = require('./post/editor.js')
+var list = require('./list/list.js')
 
 
 
@@ -39,4 +41,7 @@ CREATE TABLE identity (
 router.use('/join',join)
 router.use('/login',login)
 router.use('/logout',logout)
+router.use('/editor',editor)
+router.use('/list',list)
+
 module.exports = router

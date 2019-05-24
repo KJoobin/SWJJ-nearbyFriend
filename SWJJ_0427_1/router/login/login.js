@@ -26,8 +26,9 @@ router.get('/',function(req,res) {
 
 
 passport.serializeUser(function (user, done) {
-  console.log('passport session save ', user.id)
-  done(null, user.email);
+  //console.log(user);
+  console.log('passport session save ', user)
+  done(null, user);
 });
 
 passport.deserializeUser(function(id, done) {
@@ -64,9 +65,10 @@ router.post('/', function(req, res, next) {
     if (!user) { return res.status(401).json(info); }
     req.logIn(user, function(err) {
       if (err) { return next(err); }
+      console.log(user);
       // return res.redirect('/users/' + user.username);
 
-      return res.json("{}");
+      return res.json(user);//????? 이부분 막힘
     });
   })(req, res, next);
 });

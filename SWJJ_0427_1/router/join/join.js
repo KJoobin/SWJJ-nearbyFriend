@@ -27,15 +27,15 @@ router.get('/',function(req,res) {
 })
 
 
-passport.serializeUser(function (user, done) {
-  console.log('passport session save ', user.email)
-  done(null, user.email);
-});
+// passport.serializeUser(function (user, done) {
+//   console.log('passport session save ', user)
+//   done(null, user);
+// });
 
-passport.deserializeUser(function(email, done) {
-  console.log('passport dess', email)
-  done(null,email);
-})
+// passport.deserializeUser(function(user, done) {
+//   console.log('passport dess', user.id)
+//   done(null,user);
+// })
 
 
 
@@ -64,7 +64,7 @@ passport.use('local-join', new LocalStrategy({
           connection.query('insert into identity set ?', info, function(err,rows){ // 이메일에서 통과가 되면 테이블에 사용자를 insert 한 후.... name 정보를 가지고 join-complete.ejs로 넘어가게 했어. 잘 넘어가긴 하는데, 코드 리뷰좀 해줘. 아! 세션이 유지가 안되는 것 같아!! 밑에서 res.json 안하고, res.render를 써서 그런가봐.
               if(err) throw err
               //console.log(responseData)
-              return done(null, {'email': email, 'nickname' : info.nickname})
+              return done(null, {'email': email, 'id' : row[0].id})
           })
             
         }

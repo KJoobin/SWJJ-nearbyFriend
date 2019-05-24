@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>모임 만들기</title>
+</head>
+<body>
+    <form action="/editor" method="POST">
+        <div><label>제목</label></div>
+        <div><input type="text" name="subject"></div>
+        <div><label>카테고리</label></div>
+        <div><input type="text" name="category"></div>
+        <div><label>모임 인원</label></div>
+        <div><input type="text" name="limitNumOfPeople"></div>
+        <div><label>참여자 성별</label></div>
+        <div><input type="text" name="limitGender"></div>
+        <div><label>기간</label></div>
+        <div><input type="date" name="dateToMeet" value="2019-05-20" min="2018-12-31" max="2020-01-01"></div> <!--밸류: 오늘 /민: 오늘 /맥스: 한달후-->
+        <div><label>내용</label></div>
+        <div><textarea name="content"></textarea></div>
+        <button type="submit">글작성</button>
+    </form>
+    
+</body>
+</html>
