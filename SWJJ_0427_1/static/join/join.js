@@ -23,6 +23,8 @@ function xhrSend(url,data,method) {
     xhr.setRequestHeader(`Content-type`,`application/json`);
     xhr.send(data);
 
+    console.log(url);
+
     xhr.addEventListener('load',function() {
       var result = JSON.parse(xhr.responseText);
       if(!result.message) {
@@ -31,9 +33,17 @@ function xhrSend(url,data,method) {
         // form.action = `/join?id=${data.nickname}`;
         // form.method = "get"
         // form.submit();
-        alert(data);
-        alert(result);
-        window.location.href = `/join?nickname=${result.nickname}`;
+        if(url === 'http://localhost:3000/login'){
+          var form = document.createElement("form")
+          document.body.appendChild(form);
+          form.action = "/"
+          form.method = "get"
+          form.submit();
+        }else{
+          alert(data);
+          alert(result);
+          window.location.href = `/join?nickname=${result.nickname}`;
+        }
         // /join?id=nickname
       }
       document.querySelector('#errMsg').innerText = result.message

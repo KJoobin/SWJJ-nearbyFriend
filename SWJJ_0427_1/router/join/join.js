@@ -55,7 +55,7 @@ passport.use('local-join', new LocalStrategy({
       info.sex = 3
   }
 
-  var query = connection.query('select * from identity where email=?', [email], function(err,rows){
+  var query = connection.query('select * from identity where email=?', [email], function(err,row){
         if(err) return done(err);
         if(rows.length){
             console.log('existed email')
@@ -63,8 +63,9 @@ passport.use('local-join', new LocalStrategy({
         }else{
           connection.query('insert into identity set ?', info, function(err,rows){ // 이메일에서 통과가 되면 테이블에 사용자를 insert 한 후.... name 정보를 가지고 join-complete.ejs로 넘어가게 했어. 잘 넘어가긴 하는데, 코드 리뷰좀 해줘. 아! 세션이 유지가 안되는 것 같아!! 밑에서 res.json 안하고, res.render를 써서 그런가봐.
               if(err) throw err
-              //console.log(responseData)
-              return done(null, {'email': email, 'id' : row[0].id})
+              console.log(rows)
+              // return done(null, {'email': email, 'id' : rows[0].id})
+              return done(null, {'email': email})
           })
             
         }
