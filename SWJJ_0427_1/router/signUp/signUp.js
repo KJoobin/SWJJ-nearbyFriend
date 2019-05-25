@@ -26,7 +26,7 @@ router.get('/',function(req,res) {
   var errMsg = req.flash('error')
   if(errMsg) msg = errMsg;
   console.log("doit");
-  res.render(path.join(__dirname,"../../login/login.ejs"),{email_adress : msg})
+  res.render(path.join(__dirname,"../../views/login.ejs"),{email_adress : msg})
 })
 
 

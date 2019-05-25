@@ -31,22 +31,18 @@ CREATE TABLE identity (
   router.get('/',function(req,res) {
     console.log(req.user)
     if(!req.user) {
-      res.render(path.join(__dirname,"../login/login.ejs"),{email_adress : "Well come to the nearby Friends"})
+      res.render(path.join(__dirname,"../views/login.ejs"),{email_adress : "Well come to the nearby Friends"})
     } else {
-      res.render(path.join(__dirname,"../login/main.ejs"))
+      res.render(path.join(__dirname,"../views/main.ejs"))
   }
   })
-
 
 router.use('/join',join)
 router.use('/mypage',myPage)
 router.use('/login',login)
 router.use('/logout',logout)
-<<<<<<< HEAD
 router.use('/editor',editor)
 router.use('/list',list)
-
-=======
 router.use('/write',write)
->>>>>>> master
+
 module.exports = router

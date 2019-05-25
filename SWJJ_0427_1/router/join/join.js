@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
   host : 'localhost',
   port : 3306, //?
   user : 'root',
-  password : 'password',
+  password : 'baby',
   database : 'nearbyfriends'
 });
 
@@ -21,7 +21,6 @@ connection.connect();
 
 
 router.get('/',function(req,res) {
-<<<<<<< HEAD
   console.log(req.query);
   //var nickname = req.path
   res.render('join-complete.ejs', {'nickname': req.query.nickname});
@@ -36,12 +35,9 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function(user, done) {
   console.log('passport dess', user.id)
   done(null,user);
-=======
-  res.render(path.join(__dirname,'../../views/join-complete.ejs'),{ nickname : req.user});
->>>>>>> master
 })
 
-// 
+//
 // passport.serializeUser(function (user, done) {
 //   console.log(user)
 //   done(null, user.email);
@@ -98,16 +94,13 @@ router.post('/', function(req, res, next) {
         if (!user) { return res.status(401).json(info); }
         req.logIn(user, function(err) {
           if (err) { return next(err); }
-<<<<<<< HEAD
           return res.json({'nickname' : user.nickname});
-    
+
           //return res.json(user);
-=======
           console.log("render")
           return res.render('join-complete.ejs', {'nickname' : user.nickname});
 
           // return res.json(user);
->>>>>>> master
         });
       })(req, res, next);
 });
