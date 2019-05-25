@@ -9,10 +9,11 @@ var LocalStrategy = require('passport-local').Strategy
 
 
 const connection = mysql.createConnection({
-  host      : 'localhost',
-  user      : 'root',
-  password  : 'password',
-  database  : 'nearbyFriends'
+  host : 'localhost',
+  port : 3306, //?
+  user : 'root',
+  password : 'password',
+  database : 'nearbyfriends'
 });
 
 
@@ -25,8 +26,8 @@ router.get('/',function(req,res) {
 
 
 passport.serializeUser(function (user, done) {
-  console.log('passport session save ', user.id)
-  done(null, user.email);
+  console.log(user)
+  done(null, user);
 });
 
 passport.deserializeUser(function(id, done) {

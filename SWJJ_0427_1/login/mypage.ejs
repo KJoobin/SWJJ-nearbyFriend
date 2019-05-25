@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="Expand">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body class="Expand">
+    <div class="fater Expand D(g) GtR(mypage)">
+      <div class="box info D(f) Fd(c) Jc(Sb)">
+        <div class="box logo W(25%) H(100%)">LOGO</div>
+        <div class="box infoCate W(40%) H(100%) D(f) As(e)">
+          <div class="info_menu">참여예정(2)</div>
+          <div class="mypage info_menu">내정보</div>
+          <div class="logOut info_menu">로그아웃</div>
+          <div class="info_menu">(검색기능_사진)</div>
+        </div>
+      </div>
+      <div class="H(100%)">
+        <div class="profile center mypage_margin">
+          <img class="Expand" src=<%= picture %>>
+        </div>
+        <div class="textCenter mypage_margin">
+          <button class="change" name="changeImg">프로필 사진 바꾸기</button>
+        </div>
+        <div class="star textCenter">
+          <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+        </div>
+        <div class="textCenter">내 평점 : <%= grade %></div>
+        <div class="textCenter mypage_margin"><button name="button">내정보 수정</button></div>
+        <!-- <div class="textCenter mypage_margin"> ID : <%= userName %> </div>
+        <h1>내 평점 : <%= grade %></h1>
+        <h1>별명 : <%= nickName %></h1>
+        <h1>성별 : <%= sex %></h1>
+        <h1>나이 : <%= age %></h1>
+        <h1>지역 : <%= area %></h1>
+        <h1>자기소개 : <%= about  %></h1>
+
+        <h1>사진 : <%= picture %></h1> -->
+      </div>
+    </div>
+    <div id="modal-manage"></div>
+    <script src="/main/main.js"></script>
+    <script src="/mypage/profile_photo.js"></script>
+    <script src="/modal.js"></script>
+  </body>
+</html>

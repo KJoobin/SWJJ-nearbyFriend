@@ -3,19 +3,18 @@
 
 
 .info {
-  background-color: black;
 }
 .logo {
   background-color: white;
 }
 .category {
-  background-color: red;
+  background-color: black;
 }
 .c-c {
-  background-color:#8e44ad;
+  background-color: white;
 }
 .infoCate {
-  background-color: blue;
+  background-color: white;
 }
 .list {
   background-color: blue;

@@ -3,9 +3,11 @@ var app = express()
 var router = express.Router()
 
 var path = require('path')
+var join = require('./join/join')
 var login = require('./login/login')
-var logout = require('./logout/logout.js')
-var myPage = require('./myPage/main.js')
+var logout = require('./logout/logout')
+var myPage = require('./myPage/main')
+var write = require('./write/write')
 
 
 
@@ -25,7 +27,7 @@ CREATE TABLE identity (
 
 
   router.get('/',function(req,res) {
-    console.log("req.user : ",req.user);
+    console.log(req.user)
     if(!req.user) {
       res.render(path.join(__dirname,"../login/login.ejs"),{email_adress : "Well come to the nearby Friends"})
     } else {
@@ -34,8 +36,9 @@ CREATE TABLE identity (
   })
 
 
-
+router.use('/join',join)
 router.use('/mypage',myPage)
 router.use('/login',login)
 router.use('/logout',logout)
+router.use('/write',write)
 module.exports = router

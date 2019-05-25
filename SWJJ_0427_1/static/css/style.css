@@ -45,6 +45,26 @@ animation-iteration-count: infinite;
 animation-duration: 5s;
 animation-direction: alternate;
 }
+input {
+}
+
+.profile > img {
+  border-radius: 50%;
+}
+
+.write_button {
+  position: fixed;
+  bottom: 2px;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  z-index: 2;
+  right: 2px;
+}
+
+.menu {
+  grid-template-columns: 1fr 5fr 1fr
+}
 /*(A)  */
 .As\(s\) {
   align-self:flex-start;
@@ -55,6 +75,9 @@ animation-direction: alternate;
 /* (B) */
 .BdB {
   border-bottom-width: 1px;
+}
+.BdT\(0\) {
+  border-top:0px;
 }
 .Bdrs\(8px\) {
   border-radius: 8px;
@@ -71,6 +94,16 @@ animation-direction: alternate;
   align-items: center;
   justify-content: center;
   display: flex;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.textCenter {
+  text-align: center;
+}
+.mypage_margin {
+  margin-top: 15px;
 }
 /* (D) */
 .D\(f\) {
@@ -105,6 +138,9 @@ animation-direction: alternate;
  .Fd\(c\) {
    flex-direction: row;
  }
+ .Fs\(24px\) {
+   font-size: 24px;
+ }
 /* (G) */
 
 .Gtc\(6\,1\) {
@@ -114,11 +150,33 @@ animation-direction: alternate;
 .Gar\(100\) {
   grid-auto-rows: 33%;
 }
+
 .Gtc\(4\,1\) {
   grid-template-columns: repeat(4,1fr);
 }
+.Gtc\(1\,1\,4\) {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.Gtc\(70\,60px\) {
+  grid-template-columns: 70px 60px;
+}
 .Gg\(3\) {
   grid-gap: 3px;
+}
+.GtR\(mypage\) {
+  grid-template-rows: 1fr 11fr;
+}
+.GTA\(U\,D\) {
+  grid-template-areas: "text up" "text down"
+}
+.GA\(text\) {
+  grid-area : text;
+}
+.GA\(up\) {
+  grid-area : up;
+}
+.GA\(down\) {
+  grid-area:down;
 }
 /* (H) */
 
@@ -131,9 +189,18 @@ animation-direction: alternate;
 .H\(a\) {
   height: auto;
 }
+.H\(100\) {
+  height: 100px;
+}
 
 /* (I) */
-
+.info_menu {
+  margin-left:auto;
+  align-items:flex-end;
+}
+.infoCate {
+  align-items:center;
+}
 /* (J) */
 
 .Jc\(c\) {
@@ -152,6 +219,15 @@ animation-direction: alternate;
 
 .M\(10px\) {
   margin:10px;
+}
+.marLef {
+  margin-left: 5px;
+}
+.MgT\(5px\) {
+  margin-top:5px;
+}
+.MgT\(10px\) {
+  margin-top:10px;
 }
 
 .modalManage{
@@ -195,15 +271,53 @@ animation-direction: alternate;
   padding-left: 44px;
   padding-right: 44px;
 }
-
+.Pc\(c\) {
+  place-items :center;
+}
+.Pc\(s\) {
+  place-items:start;
+}
+.Pc\(es\) {
+  place-items:end start;
+}
+.profile {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 100px;
+  width : 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* (Q) */
 
 /* (R) */
-
+.R\(n\) {
+  resize: none;
+}
 /* (S) */
 .Sq\(30px\) {
   width:30px;
   height:30px;
+}
+/*  평가하기 */
+.star .half:before {
+  content:"\2605";
+  position:absolute;
+  width:23px;
+  overflow: hidden;
+}
+.star .full:before {
+  content:"\2605";
+  position:absolute;
+}
+.star > span:hover:before {
+  content:"\2605";
+  position:absolute;
+  width:23px;
+  overflow: hidden;
+}
+.star {
+  font-size: 50px;
 }
 /* (T) */
 .Ta\(c\) {
@@ -223,7 +337,7 @@ animation-direction: alternate;
 }
 
 .W\(100\) {
-  width:100px;
+  width:50px;
 }
 .W\(40\%\) {
   width:50%;
