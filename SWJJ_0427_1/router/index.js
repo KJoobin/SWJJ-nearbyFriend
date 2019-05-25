@@ -8,6 +8,8 @@ var login = require('./login/login')
 var logout = require('./logout/logout')
 var editor = require('./post/editor.js')
 var list = require('./list/list.js')
+var myPage = require('./myPage/main')
+var write = require('./write/write')
 
 
 
@@ -27,21 +29,24 @@ CREATE TABLE identity (
 
 
   router.get('/',function(req,res) {
-    console.log("req.user : ",req.user);
+    console.log(req.user)
     if(!req.user) {
-      res.render(path.join(__dirname,"../login/main.ejs"),{email_adress : "Well come to the nearby Friends"})
+      res.render(path.join(__dirname,"../login/login.ejs"),{email_adress : "Well come to the nearby Friends"})
     } else {
-      console.log("end?")
-      res.render(path.join(__dirname,"../login/login.ejs"),{email_adress : req.user})
+      res.render(path.join(__dirname,"../login/main.ejs"))
   }
   })
 
 
-
 router.use('/join',join)
+router.use('/mypage',myPage)
 router.use('/login',login)
 router.use('/logout',logout)
+<<<<<<< HEAD
 router.use('/editor',editor)
 router.use('/list',list)
 
+=======
+router.use('/write',write)
+>>>>>>> master
 module.exports = router

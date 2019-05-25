@@ -34,14 +34,8 @@ function xhrSend(url,data,method) {
         // form.method = "get"
         // form.submit();
         if(url === 'http://localhost:3000/login'){
-          var form = document.createElement("form")
-          document.body.appendChild(form);
-          form.action = "/"
-          form.method = "get"
-          form.submit();
+          window.location.href="/"
         }else{
-          alert(data);
-          alert(result);
           window.location.href = `/join?nickname=${result.nickname}`;
         }
         // /join?id=nickname

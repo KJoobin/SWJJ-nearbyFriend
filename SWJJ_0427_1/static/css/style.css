@@ -1,0 +1,361 @@
+#cf3 {
+  position:relative;
+  margin:0 auto;
+}
+
+#cf3 img {
+  position:absolute;
+  left:0;
+  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  height:100%;
+  width:100%;
+}
+
+#cf3 div.placard {
+  font-size:50px;
+  color:red;
+}
+#cf3 button.logBut{
+  width:10em;
+  height: 8em;
+}
+
+ @keyframes cf3FadeInOut {
+  from {
+    opacity:1;
+  }
+  45% {
+    opacity:1;
+  }
+  55% {
+    opacity:0;
+  }
+  to {
+    opacity:0;
+  }
+}
+
+#cf3 img.top {
+animation-name: cf3FadeInOut;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-duration: 5s;
+animation-direction: alternate;
+}
+input {
+}
+
+.profile > img {
+  border-radius: 50%;
+}
+
+.write_button {
+  position: fixed;
+  bottom: 2px;
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  z-index: 2;
+  right: 2px;
+}
+
+.menu {
+  grid-template-columns: 1fr 5fr 1fr
+}
+/*(A)  */
+.As\(s\) {
+  align-self:flex-start;
+}
+.As\(e\) {
+  align-self:flex-end;
+}
+/* (B) */
+.BdB {
+  border-bottom-width: 1px;
+}
+.BdT\(0\) {
+  border-top:0px;
+}
+.Bdrs\(8px\) {
+  border-radius: 8px;
+}
+.Bgc\(\#000\.68\) {
+  background-color: rgba(0,0,0,0.68);
+}
+.Bgc\(\#fff\) {
+  background-color: #fff;
+}
+
+/* (C) */
+.centerAlign {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.textCenter {
+  text-align: center;
+}
+.mypage_margin {
+  margin-top: 15px;
+}
+/* (D) */
+.D\(f\) {
+  display: flex;
+}
+.D\(g\) {
+  display: grid;
+}
+/* (E) */
+.Expand {
+  height:100%;
+  width:100%;
+}
+
+/* (F) */
+
+.F\(r\) {
+   float:right;
+ }
+
+.Fill\(\$c-divider\) {
+   fill:#e8e8e8;
+ }
+
+.Fld\(c\){
+   flex-direction: column;
+ }
+ .fater {
+   grid-gap: 2px;
+   grid-template-rows: 1fr 1fr 10fr;
+ }
+ .Fd\(c\) {
+   flex-direction: row;
+ }
+ .Fs\(24px\) {
+   font-size: 24px;
+ }
+/* (G) */
+
+.Gtc\(6\,1\) {
+  grid-template-columns:repeat(6,1fr);
+  grid-gap:10px;
+}
+.Gar\(100\) {
+  grid-auto-rows: 33%;
+}
+
+.Gtc\(4\,1\) {
+  grid-template-columns: repeat(4,1fr);
+}
+.Gtc\(1\,1\,4\) {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.Gtc\(70\,60px\) {
+  grid-template-columns: 70px 60px;
+}
+.Gg\(3\) {
+  grid-gap: 3px;
+}
+.GtR\(mypage\) {
+  grid-template-rows: 1fr 11fr;
+}
+.GTA\(U\,D\) {
+  grid-template-areas: "text up" "text down"
+}
+.GA\(text\) {
+  grid-area : text;
+}
+.GA\(up\) {
+  grid-area : up;
+}
+.GA\(down\) {
+  grid-area:down;
+}
+/* (H) */
+
+.H\(100\%\) {
+  height: 100%;
+}
+.H\(80\%\) {
+  height: 80%;
+}
+.H\(a\) {
+  height: auto;
+}
+.H\(100\) {
+  height: 100px;
+}
+
+/* (I) */
+.info_menu {
+  margin-left:auto;
+  align-items:flex-end;
+}
+.infoCate {
+  align-items:center;
+}
+/* (J) */
+
+.Jc\(c\) {
+  justify-content: center;
+}
+.Jc\(Sb\) {
+  justify-content: space-between;
+}
+
+
+/* (K) */
+
+/* (L) */
+
+/* (M) */
+
+.M\(10px\) {
+  margin:10px;
+}
+.marLef {
+  margin-left: 5px;
+}
+.MgT\(5px\) {
+  margin-top:5px;
+}
+.MgT\(10px\) {
+  margin-top:10px;
+}
+
+.modalManage{
+  position: absolute;
+  top:0px;
+  bottom: 0px;
+  left: 0px;
+  right:0px;
+}
+
+
+/* (N) */
+
+/* (O) */
+
+.Ov\(h\) {
+  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.Ov\(v\) {
+  overflow: visible;
+  overflow-x: visible;
+  overflow-y: visible;
+}
+
+
+/* (P) */
+
+.pos\(r\) {
+  position:relative;
+}
+.pos\(a\) {
+  position: absolute;
+}
+.Py\(36px\) {
+  padding-bottom: 36px;
+  padding-top: 36px;
+}
+.Px\(44px\) {
+  padding-left: 44px;
+  padding-right: 44px;
+}
+.Pc\(c\) {
+  place-items :center;
+}
+.Pc\(s\) {
+  place-items:start;
+}
+.Pc\(es\) {
+  place-items:end start;
+}
+.profile {
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 100px;
+  width : 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* (Q) */
+
+/* (R) */
+.R\(n\) {
+  resize: none;
+}
+/* (S) */
+.Sq\(30px\) {
+  width:30px;
+  height:30px;
+}
+/*  평가하기 */
+.star .half:before {
+  content:"\2605";
+  position:absolute;
+  width:23px;
+  overflow: hidden;
+}
+.star .full:before {
+  content:"\2605";
+  position:absolute;
+}
+.star > span:hover:before {
+  content:"\2605";
+  position:absolute;
+  width:23px;
+  overflow: hidden;
+}
+.star {
+  font-size: 50px;
+}
+/* (T) */
+.Ta\(c\) {
+  text-align: center;
+}
+
+/* (U) */
+
+/* (V) */
+
+/* (W) */
+.W\(100\%\) {
+  width:100%;
+}
+.W\(440px\) {
+  width: 440px;
+}
+
+.W\(100\) {
+  width:50px;
+}
+.W\(40\%\) {
+  width:50%;
+  max-width:600px
+}
+.W\(25\%\) {
+  width:25%;
+  max-width:250px;
+}
+
+/* (X) */
+
+/* (Y) */
+
+/* (Z) */
+.Z\(0\) {
+  z-index:0;
+}
+.Z\(2\) {
+  z-index:2;
+}

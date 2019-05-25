@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
   host : 'localhost',
   port : 3306, //?
   user : 'root',
-  password : 'baby',
+  password : 'password',
   database : 'nearbyfriends'
 });
 
@@ -21,6 +21,7 @@ connection.connect();
 
 
 router.get('/',function(req,res) {
+<<<<<<< HEAD
   console.log(req.query);
   //var nickname = req.path
   res.render('join-complete.ejs', {'nickname': req.query.nickname});
@@ -35,7 +36,21 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function(user, done) {
   console.log('passport dess', user.id)
   done(null,user);
+=======
+  res.render(path.join(__dirname,'../../views/join-complete.ejs'),{ nickname : req.user});
+>>>>>>> master
 })
+
+// 
+// passport.serializeUser(function (user, done) {
+//   console.log(user)
+//   done(null, user.email);
+// });
+//
+// passport.deserializeUser(function(id, done) {
+//   console.log('passport dess', id)
+//   done(null,id);
+// })
 
 
 
@@ -46,7 +61,7 @@ passport.use('local-join', new LocalStrategy({
   passReqToCallback : true
 }, function(req, email, password, done) { //done 을 사용하면 비동기 가 멈춘다
   var info = req.body;
-  console.log(info); // semicolon 필요?
+  console.log("info",info); // semicolon 필요?
   if(info.sex === 'male'){
       info.sex = 1
   }else if(info.sex === 'female'){
@@ -68,21 +83,31 @@ passport.use('local-join', new LocalStrategy({
               return done(null, {'email': email, 'id' : rows.insertId})
               // return done(null, {'email': email})
           })
-            
+
         }
     })
 }
 ))
 
 router.post('/', function(req, res, next) {
+  console.log(req.body)
     passport.authenticate('local-join', function(err, user, info) {
+      console.log("user",user);
+      console.log("info",info);
         if (err) { return next(err); }
         if (!user) { return res.status(401).json(info); }
         req.logIn(user, function(err) {
           if (err) { return next(err); }
+<<<<<<< HEAD
           return res.json({'nickname' : user.nickname});
     
           //return res.json(user);
+=======
+          console.log("render")
+          return res.render('join-complete.ejs', {'nickname' : user.nickname});
+
+          // return res.json(user);
+>>>>>>> master
         });
       })(req, res, next);
 });
