@@ -6,6 +6,8 @@ var path = require('path')
 var join = require('./join/join')
 var login = require('./login/login')
 var logout = require('./logout/logout')
+var editor = require('./post/editor.js')
+var list = require('./list/list.js')
 var myPage = require('./myPage/main')
 var write = require('./write/write')
 
@@ -40,5 +42,11 @@ router.use('/join',join)
 router.use('/mypage',myPage)
 router.use('/login',login)
 router.use('/logout',logout)
+<<<<<<< HEAD
+router.use('/editor',editor)
+router.use('/list',list)
+
+=======
 router.use('/write',write)
+>>>>>>> master
 module.exports = router

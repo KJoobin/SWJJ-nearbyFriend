@@ -52,17 +52,26 @@
    ->                             );
 
 - 글테이블 (Post)
-  id(int(11),PRIMARY),user_id(int(11))[조인],카테고리(char),제목(varchar),글(text),사진(varchar),제한인원(TINYINT),참여자 성별(tinyint),기간(달력 이용,datetime),
+  id(int(11),PRIMARY),user_id(int(11))[조인],카테고리(char),제목(varchar),작성날짜(created_at),수정날짜(updated_at),글(text),사진(varchar),제한인원(TINYINT),참여자 성별(tinyint),기간(달력 이용,datetime),삭제여부(tinyint)
   CREATE TABLE post (
     -> id INT(11) unsigned AUTO_INCREMENT NOT NULL,
     -> UID ITN(11) unsigned NOT NULL,
     -> category VARCHAR(2),
     -> subject VARCHAR(2) NOT NULL,
+    -> created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    -> updated_at DATETIME ON UPDATE CURRENT_TIMESTAMP,
     -> content TEXT,
     -> picture VARCHAR(2),
-    -> limit TINYINT,
+    -> limitNumOfPeople TINYINT,
     -> limitGender TINYINT,
+<<<<<<< HEAD
+    -> DateToMeet DATETIME ( Default 값 존재)),
+    -> deletion tinyint(1)
+
+
+=======
     -> time (DATETIME or TIEMSTAMP ( Default 값 존재)),
+>>>>>>> master
     )
 
 - 참가자 목록
