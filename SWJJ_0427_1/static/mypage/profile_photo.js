@@ -1,6 +1,5 @@
 document.querySelector('.change').onclick = function() {
 
-
   var modalText = `
     <input type="file" name="pic" accept="image/*">
     <input class="submit" type="submit">

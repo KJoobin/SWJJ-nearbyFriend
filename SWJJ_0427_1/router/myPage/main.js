@@ -21,8 +21,8 @@ connection.connect();
 
 
 router.get('/',function(req,res) {
-  console.log(req._passport.session.user);
-  var user = req._passport.session.user
+  console.log(req.user);
+  var user = req.user.email
   connection.query(`SELECT * FROM identity WHERE email = ?`,[user],function(err,rows) {
     if(err) throw err;
     var nickName = rows[0].nickname;
