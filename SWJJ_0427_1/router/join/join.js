@@ -20,20 +20,20 @@ const connection = mysql.createConnection({
 connection.connect();
 
 
-// router.get('/',function(req,res) {
-//   res.redirect('/');
-// })
-
-
-passport.serializeUser(function (user, done) {
-  console.log('passport session save ', user.id)
-  done(null, user.email);
-});
-
-passport.deserializeUser(function(id, done) {
-  console.log('passport dess', id)
-  done(null,id);
+router.get('/',function(req,res) {
+  res.render(path.join(__dirname,'../../views/join-complete.ejs'),{ nickname : req.user});
 })
+
+// 
+// passport.serializeUser(function (user, done) {
+//   console.log(user)
+//   done(null, user.email);
+// });
+//
+// passport.deserializeUser(function(id, done) {
+//   console.log('passport dess', id)
+//   done(null,id);
+// })
 
 
 

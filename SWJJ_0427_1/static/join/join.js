@@ -3,7 +3,6 @@ function join() {
     var data = {};
     data.email = document.getElementsByName("email")[0].value;
     data.password = document.getElementsByName("password")[0].value;
-    console.log(data);
 
     xhrSend("http://localhost:3000/join",data,"post") // 데이터를 router/join/noin.js로 보낸다.
 }
@@ -20,13 +19,12 @@ function xhrSend(url,data,method) {
 
     xhr.addEventListener('load',function() {
       var result = JSON.parse(xhr.responseText);
-      console.log("result",result);
       if(!result.message) {
-        var form = document.createElement("form")
-        document.body.appendChild(form);
-        form.action = "/"
-        form.method = "get"
-        form.submit();
+        if(url === "http://localhost:3000/join") {
+          window.location.href="/join"
+        } else if (url === "http://localhost:3000/login") {
+          window.location.href="/"
+        }
       }
       document.querySelector('#errMsg').innerText = result.message
   })

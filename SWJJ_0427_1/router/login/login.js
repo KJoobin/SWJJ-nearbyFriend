@@ -26,8 +26,8 @@ router.get('/',function(req,res) {
 
 
 passport.serializeUser(function (user, done) {
-  console.log('passport session save ', user.id)
-  done(null, user.email);
+  console.log(user)
+  done(null, user);
 });
 
 passport.deserializeUser(function(id, done) {
