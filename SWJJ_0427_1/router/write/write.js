@@ -8,7 +8,7 @@ var path = require('path')
 const connection = mysql.createConnection({
   host      : 'localhost',
   user      : 'root',
-  password  : 'password',
+  password  : 'baby',
   database  : 'nearbyFriends'
 });
 
@@ -16,7 +16,7 @@ const connection = mysql.createConnection({
 connection.connect();
 
 router.get('/',function(req,res) {
-  res.render(path.join(__dirname+'../../../login/write.ejs'))
+  res.render(path.join(__dirname+'../../../views/write.ejs'))
 })
 
 

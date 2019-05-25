@@ -27,7 +27,7 @@ router.post('/',function(req,res) {
   var query = connection.query('insert into post set ?', info, function(err, rows){
     if(err) throw err
     console.log('1 posting success')
-  }) 
+  })
   res.redirect('/list');
 })
 

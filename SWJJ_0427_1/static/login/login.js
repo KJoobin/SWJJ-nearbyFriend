@@ -11,29 +11,6 @@ document.querySelector("#js-login_button").addEventListener("click",function(){
   modalInLogin()
 });
 
-<<<<<<< HEAD
-// function xhrSend(url,data,method) {
-
-//     data = JSON.stringify(data)
-//     var xhr = new XMLHttpRequest();
-
-//     xhr.open(method,url);
-//     xhr.setRequestHeader(`Content-type`,`application/json`);
-//     xhr.send(data);
-
-//     xhr.addEventListener('load',function() {
-//       var result = JSON.parse(xhr.responseText);
-//       if(!result.message) {
-//         var form = document.createElement("form")
-//         document.body.appendChild(form);
-//         form.action = "/"
-//         form.method = "get"
-//         form.submit();
-//       }
-//       document.querySelector('#errMsg').innerText = result.message
-//   })
-// }
-=======
 function loadModal () {
   window.addEventListener('load',function() {
     setTimeout(function() {
@@ -57,4 +34,3 @@ function init() {
 }
 
 init();
->>>>>>> master

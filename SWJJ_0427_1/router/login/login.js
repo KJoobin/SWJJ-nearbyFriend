@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
   host : 'localhost',
   port : 3306, //?
   user : 'root',
-  password : 'password',
+  password : 'baby',
   database : 'nearbyfriends'
 });
 
@@ -25,23 +25,6 @@ router.get('/',function(req,res) {
 })
 
 
-<<<<<<< HEAD
-// passport.serializeUser(function (user, done) {
-//   //console.log(user);
-//   console.log('passport session save ', user)
-//   done(null, user);
-// });
-=======
-passport.serializeUser(function (user, done) {
-  console.log(user)
-  done(null, user);
-});
->>>>>>> master
-
-// passport.deserializeUser(function(id, done) {
-//   console.log('passport dess', id)
-//   done(null,id);
-// })
 
 
 

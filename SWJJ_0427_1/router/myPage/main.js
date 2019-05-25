@@ -11,7 +11,7 @@ var LocalStrategy = require('passport-local').Strategy
 const connection = mysql.createConnection({
   host      : 'localhost',
   user      : 'root',
-  password  : 'password',
+  password  : 'baby',
   database  : 'nearbyFriends'
 });
 
@@ -39,7 +39,7 @@ router.get('/',function(req,res) {
     var about = rows[0].about;
     var grade = rows[0].grade;
     var picture = rows[0].picture;
-    res.render(path.join(__dirname+"/../../login/mypage.ejs"),{userName:user,nickName:nickName,sex:sex,age:age,area:area,about:about,grade:grade,picture:picture})
+    res.render(path.join(__dirname, "/../../views/mypage.ejs"),{userName:user,nickName:nickName,sex:sex,age:age,area:area,about:about,grade:grade,picture:picture})
   })
 })
 
