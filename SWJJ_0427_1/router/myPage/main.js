@@ -38,7 +38,7 @@ router.get('/',function(req,res) {
     var area = rows[0].area;
     var about = rows[0].about;
     var grade = rows[0].grade;
-    var picture = rows[0].picture;
+    var picture = (rows[0].picture === null ? "https://s3.ap-northeast-2.amazonaws.com/nearbyfriends/profile_img/3092827.png" : rows[0].picture)
     res.render(path.join(__dirname, "/../../views/mypage.ejs"),{userName:user,nickName:nickName,sex:sex,age:age,area:area,about:about,grade:grade,picture:picture})
   })
 })
