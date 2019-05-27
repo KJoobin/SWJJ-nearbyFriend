@@ -25,7 +25,6 @@ var upload = multer({
 
 
 
-
 const connection = mysql.createConnection({
   host      : 'localhost',
   user      : 'root',
@@ -35,11 +34,21 @@ const connection = mysql.createConnection({
 
 
 router.post('/', upload.single('img'), function(req,res) {
-  console.log(req.file.location)
+  connection.query(`SELECT picture FROM identity WHERE id = ?`,[req.user.id],function(err,rows) {
+    if(rows[0].picture !== null) {
+      var picture = path.basename(rows[0].picture)
+      var params = {
+          Bucket: 'nearbyfriends/profile_img',
+          Key: picture
+      };
+      s3.deleteObject(params, function(err, data) {
+        if (err) console.log(err, err.stack);  // error
+        else     console.log();                 // deleted
+      });
+    }
+  })
   connection.query(`UPDATE identity SET picture =? WHERE id = ?`,[req.file.location,req.user.id],function(err,rows) {
       if(err) throw err;
-      console.log(rows[0])
-      console.log(req.file);
       res.send(req.file.location);
   })
 })

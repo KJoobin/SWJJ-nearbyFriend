@@ -29,7 +29,9 @@ function xhrSend(url,data,method) {
     xhr.addEventListener('load',function() {
       var result = xhr.responseText;
       document.querySelector('.profile img').src = result;
+      removeModal();
   })
 }
+
 
 //https://www.zerocho.com/category/HTML&DOM/post/59465380f2c7fb0018a1a263 FormData 정리 / 그다음 ajax 센드
