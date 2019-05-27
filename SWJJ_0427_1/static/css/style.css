@@ -310,12 +310,6 @@ input {
   content:"\2605";
   position:absolute;
 }
-.star > span:hover:before {
-  content:"\2605";
-  position:absolute;
-  width:23px;
-  overflow: hidden;
-}
 .star {
   font-size: 50px;
 }

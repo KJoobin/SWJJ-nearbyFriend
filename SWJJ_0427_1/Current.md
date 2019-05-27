@@ -61,17 +61,15 @@
     -> created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     -> updated_at DATETIME ON UPDATE CURRENT_TIMESTAMP,
     -> content TEXT,
-    -> picture VARCHAR(2),
+    -> picture TEXT,
     -> limitNumOfPeople TINYINT,
     -> limitGender TINYINT,
-<<<<<<< HEAD
     -> DateToMeet DATETIME ( Default 값 존재)),
     -> deletion tinyint(1)
 
 
 =======
     -> time (DATETIME or TIEMSTAMP ( Default 값 존재)),
->>>>>>> master
     )
 
 - 참가자 목록
