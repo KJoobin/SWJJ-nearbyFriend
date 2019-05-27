@@ -23,10 +23,10 @@
         <div class="textCenter mypage_margin">
           <button class="change" name="changeImg">프로필 사진 바꾸기</button>
         </div>
-        <div class="star textCenter">
-          <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-        </div>
-        <div class="textCenter">내 평점 : <%= grade %></div>
+          <div class="star textCenter">
+            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
+        <div class="textCenter"><span>내 평점 : </span><span class="grade"><%= grade %></span></div>
         <div class="textCenter mypage_margin"><button name="button">내정보 수정</button></div>
         <!-- <div class="textCenter mypage_margin"> ID : <%= userName %> </div>
         <h1>내 평점 : <%= grade %></h1>
@@ -43,5 +43,6 @@
     <script src="/main/main.js"></script>
     <script src="/mypage/profile_photo.js"></script>
     <script src="/modal.js"></script>
+    <script src="/mypage/grade.js"></script>
   </body>
 </html>

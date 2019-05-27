@@ -10,7 +10,7 @@ var editor = require('./post/editor.js')
 var list = require('./list/list.js')
 var myPage = require('./myPage/main')
 var write = require('./write/write')
-
+var update = require('./mypage/update')
 
 
 /*
@@ -44,5 +44,6 @@ router.use('/logout',logout)
 router.use('/editor',editor)
 router.use('/list',list)
 router.use('/write',write)
+router.use('/update',update)
 
 module.exports = router

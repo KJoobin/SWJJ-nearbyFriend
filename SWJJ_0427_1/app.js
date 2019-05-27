@@ -35,3 +35,5 @@ app.use(passport.session()); // 로그인상태 유지
 app.use(flash()); // 에러를 잡아서 메세지를 쉽게 전달해
 
 app.use(router);
+
+console.log(0.026*24*30)
