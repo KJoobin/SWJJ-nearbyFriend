@@ -5,6 +5,7 @@ var mysql = require('mysql')
 var path = require('path')
 var passport = require('passport')
 var upload = require('./upload')
+var update = require('./update')
 var LocalStrategy = require('passport-local').Strategy
 
 
@@ -44,5 +45,6 @@ router.get('/',function(req,res) {
 })
 
 router.use('/upload',upload)
+router.use('/update',update)
 
 module.exports= router;

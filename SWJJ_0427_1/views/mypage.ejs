@@ -21,23 +21,22 @@
           <img class="Expand" src=<%= picture %>>
         </div>
         <div class="textCenter mypage_margin">
+          <div> <%= userName %> 님 반갑습니다 </div>
           <button class="change" name="changeImg">프로필 사진 바꾸기</button>
         </div>
           <div class="star textCenter">
             <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
           </div>
         <div class="textCenter"><span>내 평점 : </span><span class="grade"><%= grade %></span></div>
-        <div class="textCenter mypage_margin"><button name="button">내정보 수정</button></div>
-        <!-- <div class="textCenter mypage_margin"> ID : <%= userName %> </div>
-        <h1>내 평점 : <%= grade %></h1>
-        <h1>별명 : <%= nickName %></h1>
-        <h1>성별 : <%= sex %></h1>
-        <h1>나이 : <%= age %></h1>
-        <h1>지역 : <%= area %></h1>
-        <h1>자기소개 : <%= about  %></h1>
-
-        <h1>사진 : <%= picture %></h1> -->
+        <div class="textCenter mypage_margin"><button class = "modifyProfile"name="button">내정보 수정</button></div>
+        <div class="textCenter mypage_margin none profile_list">
+        <h4>별명 : <input type="text" value=<%= nickName %>></input></h4>
+        <h4>지역 : <input type="text" value=<%= area %>></input></h4>
+        <h4>자기소개 : <input type="text" value=<%= about  %>></input></h4>
+        <button class="modify_button">변경 완료</button>
+        <button class="cancel"> 취소 </button>
       </div>
+    </div>
     </div>
     <div id="modal-manage"></div>
     <script src="/main/main.js"></script>

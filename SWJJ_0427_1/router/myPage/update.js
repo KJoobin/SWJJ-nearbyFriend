@@ -16,7 +16,15 @@ connection.connect();
 
 // UPDATE table_name SET field1 = new-value1, field2 = new-value2
 // [WHERE Clause]
-
+router.post('/',function(req,res) {
+  var info = req.body;
+  console.log(info);
+  connection.query(`UPDATE identity SET nickname = ?, area = ?, about = ? WHERE id = ?`,[info.nickName, info.area, info.about, req.user.id], function(err, row) {
+    if(err) throw err;
+    console.log(row);
+  })
+  res.send();
+})
 
 
 
