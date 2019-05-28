@@ -11,6 +11,7 @@ AWS.config.loadFromPath(path.join(__dirname, "/../../context/awsconfig.json"));
 var s3 = new AWS.S3();
 
 var upload = multer({
+  limits: { fileSize : 2 * 1024 * 1024 },
   storage: multerS3({
     s3:s3,
     bucket:"nearbyfriends/profile_img",
@@ -19,7 +20,8 @@ var upload = multer({
       cb(null,Date.now().toString() + extension)
     },
     acl:'public-read-write'
-    })
+  })
+
   });
 
 
