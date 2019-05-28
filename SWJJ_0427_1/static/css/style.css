@@ -240,7 +240,9 @@ input {
 
 
 /* (N) */
-
+.none {
+  display: none;
+}
 /* (O) */
 
 .Ov\(h\) {

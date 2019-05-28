@@ -37,18 +37,6 @@ passport.deserializeUser(function(user, done) {
   done(null,user);
 })
 
-//
-// passport.serializeUser(function (user, done) {
-//   console.log(user)
-//   done(null, user.email);
-// });
-//
-// passport.deserializeUser(function(id, done) {
-//   console.log('passport dess', id)
-//   done(null,id);
-// })
-
-
 
 
 passport.use('local-join', new LocalStrategy({
