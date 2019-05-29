@@ -1,5 +1,5 @@
 function join() {
-
+    isBlank = false;
     var data = {};
     data.email = document.getElementsByName("email")[0].value;
     data.password = document.getElementsByName("password")[0].value;
@@ -9,8 +9,16 @@ function join() {
     data.area = document.getElementsByName("area")[0].value;
     data.about = document.getElementsByName("about")[0].value;
     console.log(data);
-
-    xhrSend("http://localhost:3000/join",data,"post") // 데이터를 router/join/noin.js로 보낸다.
+    for(var key in data) {
+      if(!data[key].length) {
+        alert(key + "값을 입력해 주세요!")
+        isBlank = true;
+        break;
+      }
+    }
+    if(!isBlank) {
+      xhrSend("http://localhost:3000/join",data,"post") // 데이터를 router/join/noin.js로 보낸다.
+    }
 }
 
 
