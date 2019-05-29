@@ -3,8 +3,12 @@ function login() {
     var data = {};
     data.email = document.getElementsByName("email")[0].value;
     data.password = document.getElementsByName("password")[0].value;
-
-    xhrSend("http://localhost:3000/login",data,"post")
+    console.log(data.email.length,data.password.length)
+    if(data.email.length || data.password.length) {
+      xhrSend("http://localhost:3000/login",data,"post")
+    } else {
+      alert("email 과 password 를 입력해주세요 !")
+    }
 }
 
 document.querySelector("#js-login_button").addEventListener("click",function(){
