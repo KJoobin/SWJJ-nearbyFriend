@@ -25,10 +25,13 @@ document.querySelector(".cancel").onclick = function() {
 }
 
 function fileUp() {
-  var formData = new FormData();
-  formData.append("img", document.querySelector("#modal-manage input").files[0]);
-  xhrImgSend("http://localhost:3000/mypage/upload",formData,"post");
-
+  if(document.querySelector("#modal-manage input").files[0] === undefined) {
+    alert("파일을 선택해 주세요")
+  } else {
+    var formData = new FormData();
+    formData.append("img", document.querySelector("#modal-manage input").files[0]);
+    xhrImgSend("http://localhost:3000/mypage/upload",formData,"post");
+  }
 }
 
 function xhrImgSend(url,data,method) {
