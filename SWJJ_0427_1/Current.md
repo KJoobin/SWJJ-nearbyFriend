@@ -73,7 +73,7 @@
     )
 
 - 참가자 목록
-  id(int(11),PRIMARY),글목록_id(int(11)),참각자_id(int(11)),
+  id(int(11),PRIMARY),post_id(int(11)),UID(int(11)),
 
 10 1
 10 2
