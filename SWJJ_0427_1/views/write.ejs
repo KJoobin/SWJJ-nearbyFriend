@@ -7,19 +7,18 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body class="Expand">
-    <div class="fater Expand D(g)">
-      <div class="box info D(g) Gtc(1,1,4)">
-        <div class="box logo">LOGO</div>
-        <div></div>
-        <div class="box infoCate D(g) Gtc(4,1) Pc(es)">
+    <div class="Expand D(g) GtR(write)">
+      <div class="box info D(f) Fd(c) Jc(Sb)">
+        <div class="box logo W(25%) H(100%)">LOGO</div>
+        <div class="box infoCate W(40%) H(100%) D(f) As(e)">
           <div class="info_menu">참여예정(2)</div>
           <div class="mypage info_menu">내정보</div>
           <div class="logOut info_menu">로그아웃</div>
           <div class="info_menu">(검색기능_사진)</div>
         </div>
       </div>
-      <div class="H(100%)">
-  </div>
+        <!-- <div class="H(100%)">
+      </div> -->
     <div class="D(g) menu">
       <div></div>
       <div class="box D(g) Gg(3)">
@@ -27,7 +26,7 @@
           <div> 제목 </div>
         </div>
         <div class="D(g)">
-          <input type="text" class="BdT(0) MgT(5px)"></input>
+          <input type="text" class="title BdT(0) MgT(5px)"></input>
         </div>
         <div class="D(g) Gtc(6,1) Pc(c) MgT(5px) H(100)">
           <div>img</div>
@@ -41,34 +40,38 @@
           <div class="MgT(5px)"> 참여인원 제한 </div>
         </div>
         <div class="D(g) Pc(s) GTA(U,D) Gtc(70,60px) MgT(5px)">
-          <input type="text" class="limitT BdT(0) H(100%) GA(text) W(100) Fs(24px)" value="0"></input>
+          <input type="text" class="limitT BdT(0) H(100%) GA(text) W(100) Fs(24px)" value="0" onkeydown="javascript : return (event.keyCode >= 48 && event.keyCode <= 57) || event.keyCode === 8 ? true : false"></input>
           <div class="up GA(up)">up</div>
           <div class="down GA(down)">down</div>
         </div>
         <div class="">
           <div class="MgT(10px)">참여자 성별</div>
         </div>
-        <div class="D(g) Pc(c)">
-          <div> </div>
+        <div class=" Pc(c)">
+          <input type="radio" name="sex" value="남" class="ML">남자</input>
+          <input type="radio" name="sex" value="여" class="ML">여자</input>
+          <input type="radio" name="sex" value="상관없음" class="ML">상관없음</input>
         </div>
         <div class="">
           <div class="MgT(10px)">기간</div>
         </div>
-        <div class="">
-          <div>달력 form</div>
+        <div class="time">
+          <input type="date" ></input>
+          <input type="time"></input>
         </div>
         <div class="D(g) Pc(es)">
           <div> 내용 </div>
         </div>
         <div class="D(g)">
-          <textarea rows= "10" cols="1" class="R(n) MgT(10px)"></textarea>
+          <textarea rows= "8" cols="1" class="R(n) MgT(10px)"></textarea>
         </div>
         <div>
-          <button>작성</button>
+          <button class="write_submit MgT(10px)">작성</button>
         </div>
       </div>
       <div></div>
     </div>
+    <script src="/write/time.js"></script>
     <script src="/main/main.js"></script>
     <script src="/write/limit.js"></script>
   </body>
