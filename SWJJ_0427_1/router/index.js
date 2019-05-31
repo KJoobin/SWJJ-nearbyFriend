@@ -10,6 +10,7 @@ var editor = require('./post/editor.js')
 var list = require('./list/list.js')
 var myPage = require('./myPage/main')
 var write = require('./write/write')
+var main = require('./main/main')
 
 
 
@@ -30,10 +31,10 @@ CREATE TABLE identity (
 
   router.get('/',function(req,res) {
     console.log(req.user)
-    if(!req.user) {
-      res.render(path.join(__dirname,"../views/login.ejs"),{email_adress : "Well come to the nearby Friends"})
-    } else {
+    if(req.user) {
       res.render(path.join(__dirname,"../views/main.ejs"))
+    } else {
+      res.render(path.join(__dirname,"../views/login.ejs"))
   }
   })
 
@@ -44,6 +45,7 @@ router.use('/logout',logout)
 router.use('/editor',editor)
 router.use('/list',list)
 router.use('/write',write)
+router.use('/main',main)
 
 
 module.exports = router

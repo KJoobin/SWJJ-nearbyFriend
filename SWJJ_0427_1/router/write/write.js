@@ -16,7 +16,11 @@ const connection = mysql.createConnection({
 connection.connect();
 
 router.get('/',function(req,res) {
-  res.render(path.join(__dirname+'../../../views/write.ejs'))
+  if(req.user) {
+    res.render(path.join(__dirname+'../../../views/write.ejs'))
+  } else {
+    res.redirect("/")
+}
 })
 
 
